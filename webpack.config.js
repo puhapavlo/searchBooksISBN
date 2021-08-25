@@ -29,7 +29,7 @@ module.exports = {
   context: path.resolve(__dirname, "src"),
   mode: "development",
   entry: {
-    main: ["@babel/polyfill", "./js/main.js"]
+    main: ["@babel/polyfill", "./main.js"]
   },
   output: {
     filename: "[name].[contenthash].js",
@@ -38,8 +38,8 @@ module.exports = {
   },
   optimization: optimization(),
   devServer: {
-    hot: isDev,
-    port: 9000,
+      hot: isDev,
+      port: 9000,
   },
   plugins: [
     new HTMLWebpackPlugin({
@@ -72,6 +72,10 @@ module.exports = {
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: "asset/resource",
+      },
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
       },
     ],
   },

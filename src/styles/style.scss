@@ -1,0 +1,12 @@
+@import "~normalize.css";
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}
+.container{
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+@import "search-main.scss";
