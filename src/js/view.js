@@ -1,3 +1,7 @@
-export default {
-    // Some data...
-  };
+module.exports = {
+  render(templateName, model) {
+    const renderFn = Handlebars.compile(templateName);
+
+    return renderFn(model);
+}
+}

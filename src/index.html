@@ -1,23 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SearchBooks</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+  </head>
+  <body>
     <section class="search-main">
-        <div class="container search-main__container">
-            <img src="./img/main-books.png" alt="books" class="search-main__img">
-            <form class="search-main__form" action="">
-                <input class="search-main__input" type="text" placeholder="Search Books">
-                <button type="submit" class="search-main__btn"><img class="search-main__icon" src="img/search-icon.svg" alt="search-icon"></button>
-            </form>
-        </div>
+      <div class="container search-main__container">
+        <img src="./img/main-books.png" alt="books" class="search-main__img" />
+        <form class="search-main__form" action="">
+          <input
+            class="search-main__input"
+            type="text"
+            placeholder="Enter the ISBN of the book"
+          />
+          <button type="submit" class="search-main__btn">
+            <img
+              class="search-main__icon"
+              src="img/search-icon.svg"
+              alt="search-icon"
+            />
+          </button>
+        </form>
+      </div>
     </section>
-</body>
+
+    <section class="book">
+      <div class="container container__book"></div>
+    </section>
+
+    <script id="bookTemplate" type="text/x-handlebars-template">
+      <img src={{img}} alt="book" class="book__img"/>
+      <h1 class="book__title">{{title}}</h1>
+      <h2 class="book__authors">{{authors}}</h2>
+      <div class="book__publishedDate">Published date: {{publishedDate}}</div>
+      <div class="book__categories">Categories: {{categories}}</div>
+      <div class="book__description">Description: {{description}}</div>
+    </script>
+  </body>
 </html>
